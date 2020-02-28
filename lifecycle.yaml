@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lifecycle-demo
+  labels:
+    purpose: lifecycleevents
+spec:
+  containers:
+    - name: lifecycle-cntr
+      image: nginx
+      lifecycle:
+        postStart:
+          exec:
+            command: ["/bin/sh", "-c", "export MY_IND=index.html && echo Hi from the postStart handler > /usr/share/message"]
+        preStop:
+          exec:
+            command: ["/usr/sbin/nginx","-s","quit"]

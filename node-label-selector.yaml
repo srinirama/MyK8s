@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-label-selector
+  labels:
+    demo: node-label
+spec:
+  containers:
+    - name : node-label-cntr
+      image: nginx
+      imagePullPolicy: IfNotPresent
+  nodeSelector:
+    env: dev
+
+
+

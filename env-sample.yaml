@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: environment-sample
+  labels:
+    purpose: environment-sample
+spec:
+  containers:
+    - name: env-var-demo
+      image: gcr.io/google-samples/node-hello:1.0
+      env:
+       - name: DEMO_GREETING
+         value: "Hi"
+       - name: DEMO_FAREWELL
+         value: "Hi Farewell"
