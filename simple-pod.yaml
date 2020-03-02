@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: twocontainers
+  name: twocontainersToTest
 spec:
   containers:
   - name: sise
